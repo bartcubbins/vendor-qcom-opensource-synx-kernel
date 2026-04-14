@@ -1,3 +1,7 @@
+ifeq ($(SYNX_ROOT),)
+SYNX_ROOT := $(srctree)/techpack/synx
+endif
+
 LINUXINCLUDE    += -I$(SYNX_ROOT)/include \
                    -I$(SYNX_ROOT)/include/uapi \
 		   -I$(SYNX_ROOT)/include/uapi/synx/media \

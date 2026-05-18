@@ -13,6 +13,11 @@ ccflags-y += -I$(SYNX_ROOT)/msm/synx/
 # to follow up with mmrm team if techpack users need to define this for long term?
 #KBUILD_CPPFLAGS += -DCONFIG_MSM_MMRM
 
+ifeq ($(CONFIG_ARCH_WAIPIO), y)
+include $(SYNX_ROOT)/config/waipiosynx.conf
+LINUXINCLUDE += -include $(SYNX_ROOT)/config/waipiosynxconf.h
+endif
+
 ifeq ($(CONFIG_ARCH_PINEAPPLE), y)
 include $(SYNX_ROOT)/config/pineapplesynx.conf
 LINUXINCLUDE += -include $(SYNX_ROOT)/config/pineapplesynxconf.h
